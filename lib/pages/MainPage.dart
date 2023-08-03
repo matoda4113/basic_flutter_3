@@ -1,3 +1,4 @@
+import 'package:basic_flutter_3/pages/MemberListPage.dart';
 import 'package:basic_flutter_3/pages/ProductDetailPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -57,6 +58,14 @@ class MainPage extends StatelessWidget {
                 ProductWidget(item : product4),
               ],
             ),
+            SizedBox(height: 50,),
+            GestureDetector(
+              onTap: (){
+                Get.to(()=>MemberListPage());
+              },
+              child: Text("회원목록 보러 가기"),
+            ),
+
 
 
           ],

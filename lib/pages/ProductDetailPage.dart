@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 
 class ProductDetailPage extends StatelessWidget {
-
   final String productName;
   final String imagePath;
   final String price;
 
-  const ProductDetailPage({Key? key ,required this.productName ,required this.imagePath, required this.price}) : super(key: key);
+  const ProductDetailPage({
+    Key? key,
+    required this.productName,
+    required this.imagePath,
+    required this.price,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("${productName} 상세페이지"),),
+      appBar: AppBar(
+        title: Text("${productName} 상세페이지"),
+      ),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 10),
@@ -20,23 +26,25 @@ class ProductDetailPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(productName),
-              SizedBox(height: 50,),
+              SizedBox(height: 50),
               Image.network(imagePath),
-              SizedBox(height: 50,),
+              SizedBox(height: 50),
               Text(price),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               Text("구매자 목록"),
-              Column(
+              ListView(
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                physics: NeverScrollableScrollPhysics(),
                 children: [
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 4),
                     width: 100,
                     height: 30,
                     decoration: BoxDecoration(
-                        color: Colors.lightBlueAccent,
-                      border: Border.all(color: Colors.black)
+                      color: Colors.lightBlueAccent,
+                      border: Border.all(color: Colors.black),
                     ),
-
                     child: Center(child: Text("김철수")),
                   ),
                   Container(
@@ -44,10 +52,9 @@ class ProductDetailPage extends StatelessWidget {
                     width: 100,
                     height: 30,
                     decoration: BoxDecoration(
-                        color: Colors.lightBlueAccent,
-                        border: Border.all(color: Colors.black)
+                      color: Colors.lightBlueAccent,
+                      border: Border.all(color: Colors.black),
                     ),
-
                     child: Center(child: Text("김영희")),
                   ),
                   Container(
@@ -55,17 +62,13 @@ class ProductDetailPage extends StatelessWidget {
                     width: 100,
                     height: 30,
                     decoration: BoxDecoration(
-                        color: Colors.lightBlueAccent,
-                        border: Border.all(color: Colors.black)
+                      color: Colors.lightBlueAccent,
+                      border: Border.all(color: Colors.black),
                     ),
-
                     child: Center(child: Text("박상희")),
                   ),
                 ],
-              )
-
-
-
+              ),
             ],
           ),
         ),
