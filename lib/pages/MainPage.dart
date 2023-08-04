@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import '../component/ProductWIdget.dart';
 import '../vo/Product.dart';
 import '../vo/Product.dart';
+import 'StoreListPage.dart';
 
 class MainPage extends StatelessWidget {
 
@@ -64,6 +65,13 @@ class MainPage extends StatelessWidget {
                 Get.to(()=>MemberListPage());
               },
               child: Text("회원목록 보러 가기"),
+            ),
+            SizedBox(height: 20,),
+            GestureDetector(
+              onTap: (){
+                Get.to(()=>StoreListPage());
+              },
+              child: Text("매장목록 보러 가기"),
             ),
 
 

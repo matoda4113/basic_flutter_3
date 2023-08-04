@@ -1,58 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MemberListPage extends StatelessWidget {
-  const MemberListPage({Key? key}) : super(key: key);
+  MemberListPage({Key? key}) : super(key: key);
+
+  final List<String> member = ['김철수', '김영희', '박상희'];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("멤버 리스트"),),
-      body: ListView(
-
+      body: Column(
         children: [
-          Container(
-            width: 100,
-            height: 150,
-            color: Colors.redAccent,
-            child: Text("김철수"),
-          ),
-          Container(
-            width: 100,
-            height: 150,
-            color: Colors.redAccent,
-            child: Text("김철수"),
-          ),
-          Container(
-            width: 100,
-            height: 150,
-            color: Colors.redAccent,
-            child: Text("김철수"),
-          ),
-          Container(
-            width: 100,
-            height: 150,
-            color: Colors.redAccent,
-            child: Text("김철수"),
+          Text("멤버리스트"),
+          Expanded(
+            child: ListView.builder(
+              itemCount: member.length,
+              itemBuilder: (context, index) {
+                return Container(
+                  margin: EdgeInsets.symmetric(vertical: 4),
+                  height: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.lightBlueAccent,
+                    border: Border.all(color: Colors.black),
+                  ),
+                  child: Center(child: Text(member[index]))
+                );
+              },
+            ),
           ),
 
           Container(
-            width: 100,
-            height: 150,
-            color: Colors.redAccent,
-            child: Text("김철수"),
-          ),
-          Container(
-            width: 100,
-            height: 150,
-            color: Colors.redAccent,
-            child: Text("김철수"),
-          ),
-          Container(
-            width: 100,
-            height: 150,
-            color: Colors.redAccent,
-            child: Text("김철수"),
-          ),
+            height: 50,
+              width: Get.width,
+              color: Colors.brown,
+              child: Center(child: Text("구글광고"))),
+
+
         ],
       ),
     );
